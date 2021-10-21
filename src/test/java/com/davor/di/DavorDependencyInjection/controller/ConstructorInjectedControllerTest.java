@@ -17,6 +17,6 @@ class ConstructorInjectedControllerTest {
 
     @Test
     void getGreetingService() {
-        System.out.println(constructorInjectedController.getGreetingService().sayHello());
+        System.out.println(constructorInjectedController.getGreetingService());
     }
 }
