@@ -30,6 +30,11 @@ public class DavorDependencyInjectionApplication {
 		System.out.println("Constructor --------------------");
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 		System.out.println(constructorInjectedController.getGreetingService());
+
+		System.out.println("Profiles --------------------");
+		I18NController i18NController = (I18NController) ctx.getBean("i18NController");
+		System.out.println(i18NController.getGreeting());
+
 	}
 
 }
