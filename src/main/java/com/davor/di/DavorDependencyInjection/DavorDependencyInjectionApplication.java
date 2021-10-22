@@ -1,9 +1,6 @@
 package com.davor.di.DavorDependencyInjection;
 
-import com.davor.di.DavorDependencyInjection.controller.ConstructorInjectedController;
-import com.davor.di.DavorDependencyInjection.controller.HelloWorldController;
-import com.davor.di.DavorDependencyInjection.controller.PropertyInjectedController;
-import com.davor.di.DavorDependencyInjection.controller.SetterInjectedController;
+import com.davor.di.DavorDependencyInjection.controller.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -17,6 +14,10 @@ public class DavorDependencyInjectionApplication {
 		ApplicationContext ctx = SpringApplication.run(DavorDependencyInjectionApplication.class, args);
 		HelloWorldController helloWorldController = (HelloWorldController) ctx.getBean("helloWorldController");
 		System.out.println(helloWorldController.sayHello());
+
+		System.out.println("Primary --------------------");
+		PrimaryController primaryController = (PrimaryController) ctx.getBean("primaryController");
+		System.out.println(primaryController.getGreeting());
 
 		System.out.println("Property --------------------");
 		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean("propertyInjectedController");
