@@ -3,7 +3,7 @@ package com.davor.di.DavorDependencyInjection.service;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-@Profile(value = "EN")
+@Profile(value = {"EN", "default"})
 @Service(value = "i18nService")
 public class I18NEnglishGreetingService implements GreetingService {
     @Override
