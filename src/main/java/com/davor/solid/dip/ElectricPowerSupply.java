@@ -1,11 +1,11 @@
 package com.davor.solid.dip;
 
-public class ElectricPowerSupply {
-    private LightBulb lightBulb;
+public class ElectricPowerSupply implements Switch {
+    private Switchable switchable;
     private boolean isOn;
 
-    public ElectricPowerSupply(LightBulb lightBulb) {
-        this.lightBulb = lightBulb;
+    public ElectricPowerSupply(Switchable switchable) {
+        this.switchable = switchable;
         this.isOn = false;
     }
 
@@ -15,10 +15,10 @@ public class ElectricPowerSupply {
 
     public void press() {
         if (isOn()) {
-            lightBulb.turnOff();
+            switchable.turnOff();
             this.isOn = false;
         } else {
-            lightBulb.turnOn();
+            switchable.turnOn();
             this.isOn = true;
         }
     }
