@@ -1,5 +1,7 @@
 package com.davor.di.DavorDependencyInjection.config;
 
+import com.davor.di.DavorDependencyInjection.repository.InternationalMessages;
+import com.davor.di.DavorDependencyInjection.repository.InternationalMessagesImpl;
 import com.davor.di.DavorDependencyInjection.service.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,10 +32,15 @@ public class GreetingServiceConfig {
         return new PrimaryGreetingService();
     }
 
+    @Bean
+    InternationalMessages internationalMessages() {
+        return new InternationalMessagesImpl();
+    }
+
     @Profile(value = {"EN", "default"})
     @Bean(value = "i18nService")
-    I18NEnglishGreetingService i18NEnglishGreetingService(){
-        return new I18NEnglishGreetingService();
+    I18NEnglishGreetingService i18NEnglishGreetingService(InternationalMessages internationalMessages){
+        return new I18NEnglishGreetingService(internationalMessages);
     }
 
     @Profile(value = "ES")
