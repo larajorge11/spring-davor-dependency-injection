@@ -8,4 +8,5 @@
     <bean name="constructorGreetingService" class="com.davor.di.DavorDependencyInjection.service.ConstructorGreetingService"/>
     <bean name="propertyGreetingService" class="com.davor.di.DavorDependencyInjection.service.PropertyGreetingService"/>
     <bean name="setterGreetingService" class="com.davor.di.DavorDependencyInjection.service.SetterGreetingService"/>
+    <bean name="primaryGreetingService" class="com.davor.di.DavorDependencyInjection.service.PrimaryGreetingService" primary="true"/>
 </beans>

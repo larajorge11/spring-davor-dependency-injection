@@ -9,12 +9,6 @@ import org.springframework.context.annotation.*;
 @Configuration
 public class GreetingServiceConfig {
 
-    @Primary
-    @Bean
-    PrimaryGreetingService primaryGreetingService() {
-        return new PrimaryGreetingService();
-    }
-
     @Bean
     InternationalMessages internationalMessages() {
         return new InternationalMessagesImpl();
