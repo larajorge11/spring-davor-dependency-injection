@@ -9,4 +9,19 @@
     <bean name="propertyGreetingService" class="com.davor.di.DavorDependencyInjection.service.PropertyGreetingService"/>
     <bean name="setterGreetingService" class="com.davor.di.DavorDependencyInjection.service.SetterGreetingService"/>
     <bean name="primaryGreetingService" class="com.davor.di.DavorDependencyInjection.service.PrimaryGreetingService" primary="true"/>
+    <bean id="internationalMessages" name="internationalMessages" class="com.davor.di.DavorDependencyInjection.repository.InternationalMessagesImpl"/>
+
+
+    <beans profile="ES">
+        <bean id="i18nService" name="i18NSpanishGreetingService" class="com.davor.di.DavorDependencyInjection.service.I18NSpanishGreetingService"/>
+    </beans>
+
+    <beans profile="EN">
+        <bean id="i18nService" name="i18NEnglishGreetingService" class="com.davor.di.DavorDependencyInjection.service.I18NEnglishGreetingService">
+            <constructor-arg index="0" ref="internationalMessages"/>
+        </bean>
+    </beans>
+
+
+
 </beans>
